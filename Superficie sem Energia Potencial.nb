@@ -1,0 +1,219 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      7922,        211]
+NotebookOptionsPosition[      7405,        193]
+NotebookOutlinePosition[      7834,        210]
+CellTagsIndexPosition[      7791,        207]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{
+  "m1", ",", "m2", ",", "mu", ",", "X", ",", "Y", ",", "r1", ",", "r2", ",", 
+   "U", ",", "offset"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"m1", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"m2", "=", "1"}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"mu", "[", 
+    RowBox[{"m1_", ",", "m2_"}], "]"}], ":=", 
+   RowBox[{"m2", "/", 
+    RowBox[{"(", 
+     RowBox[{"m1", "+", "m2"}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"r1", "[", 
+   RowBox[{"X_", ",", "Y_", ",", "mu_"}], "]"}], ":=", 
+  RowBox[{"Sqrt", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"X", "+", "mu"}], ")"}], "^", "2"}], "+", 
+    RowBox[{"Y", "^", "2"}]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"r2", "[", 
+    RowBox[{"X_", ",", "Y_", ",", "mu_"}], "]"}], ":=", 
+   RowBox[{"Sqrt", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"X", "-", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", "mu"}], ")"}]}], ")"}], "^", "2"}], "+", 
+     RowBox[{"Y", "^", "2"}]}], "]"}]}], "\n", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"offset", "=", "5"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"U", "[", 
+    RowBox[{"X_", ",", "Y_", ",", "m1_", ",", "m2_"}], "]"}], ":=", 
+   RowBox[{"-", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"X", "^", "2"}], "+", 
+      RowBox[{"Y", "^", "2"}]}], ")"}]}]}], "\[IndentingNewLine]", 
+  "\n"}], "\[IndentingNewLine]", 
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Plot3D", "[", 
+    RowBox[{
+     RowBox[{"U", "[", 
+      RowBox[{"X", ",", "Y", ",", "m1", ",", "m2"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"X", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Y", ",", 
+       RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "2"}], ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"offset", "-", "5"}], ",", 
+          RowBox[{"offset", "+", "0"}]}], "}"}]}], "}"}]}], ",", 
+     RowBox[{"AxesLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{"\"\<X\>\"", ",", "\"\<Y\>\"", ",", "\"\<U(X, Y)\>\""}], 
+       "}"}]}], ",", 
+     RowBox[{"PlotStyle", "->", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Rainbow", ",", 
+        RowBox[{"Opacity", "[", "0.8", "]"}]}], "]"}]}], ",", 
+     RowBox[{"Mesh", "->", "50"}], ",", 
+     RowBox[{"PlotPoints", "->", "50"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m1", ",", "1", ",", "\"\<Massa 1\>\""}], "}"}], ",", "1", ",", 
+     "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"m2", ",", "1", ",", "\"\<Massa 2\>\""}], "}"}], ",", "0.01", 
+     ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"offset", ",", "5", ",", "\"\<Eleva\[CCedilla]\[ATilde]o\>\""}],
+       "}"}], ",", "0", ",", "10"}], "}"}]}], "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.946386930970186*^9, 3.9463869309711857`*^9}, 
+   3.946387227767248*^9, {3.9464569725504932`*^9, 3.946456975245636*^9}, {
+   3.9473198645664806`*^9, 3.947319866678665*^9}, {3.947319909772394*^9, 
+   3.947319956040451*^9}, {3.9473201223046665`*^9, 3.9473201725820923`*^9}, {
+   3.9473202278943596`*^9, 3.9473202280452538`*^9}, {3.947320261607931*^9, 
+   3.947320262241972*^9}, {3.947320313822031*^9, 3.9473203234618874`*^9}, {
+   3.94732051166951*^9, 3.9473205335357113`*^9}, 3.947320687656605*^9, {
+   3.9473207371964016`*^9, 3.9473207577604465`*^9}, {3.9473550755154724`*^9, 
+   3.9473550793225727`*^9}},
+ CellLabel->
+  "In[263]:=",ExpressionUUID->"a9c862e1-5b66-1c43-9158-532386b340de"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`m1$$ = 1, $CellContext`m2$$ = 
+    0.3333, $CellContext`offset$$ = 1.08, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`m1$$], 1, "Massa 1"}, 1, 10, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`m2$$], 1, "Massa 2"}, 0.01, 1, ControlType -> 
+      Manipulator}, {{
+       Hold[$CellContext`offset$$], 5, "Eleva\[CCedilla]\[ATilde]o"}, 0, 10, 
+      ControlType -> Manipulator}}, Typeset`size$$ = {
+    753., {346.5226103189944, 352.25454412299047`}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`m1$$ = 1, $CellContext`m2$$ = 
+        1, $CellContext`offset$$ = 5}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> Plot3D[
+        $CellContext`U[$CellContext`X, $CellContext`Y, $CellContext`m1$$, \
+$CellContext`m2$$], {$CellContext`X, -2, 2}, {$CellContext`Y, -2, 2}, 
+        PlotRange -> {{-2, 2}, {-2, 
+          2}, {$CellContext`offset$$ - 5, $CellContext`offset$$ + 0}}, 
+        AxesLabel -> {"X", "Y", "U(X, Y)"}, PlotStyle -> 
+        Directive[$CellContext`Rainbow, 
+          Opacity[0.8]], Mesh -> 50, PlotPoints -> 50], 
+      "Specifications" :> {{{$CellContext`m1$$, 1, "Massa 1"}, 1, 
+         10}, {{$CellContext`m2$$, 1, "Massa 2"}, 0.01, 
+         1}, {{$CellContext`offset$$, 5, "Eleva\[CCedilla]\[ATilde]o"}, 0, 
+         10}}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{
+      800.0999999999999, {419.1734501627444, 424.9053839667405}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.947320516911808*^9, 3.9473205538237896`*^9}, 
+   3.947320688403288*^9, {3.947320737919319*^9, 3.947320758106329*^9}, 
+   3.9473207981996326`*^9, {3.9473550542124844`*^9, 3.9473550851904163`*^9}},
+ CellLabel->
+  "Out[271]=",ExpressionUUID->"c1a86fd4-fa54-f549-8067-20984f289746"]
+}, Open  ]]
+},
+WindowSize->{1428, 735.75},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1. Inherited,
+FrontEndVersion->"14.1 for Microsoft Windows (64-bit) (July 16, 2024)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"ef09919d-04cf-9548-8ba4-6dd9d1d7e529"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 3945, 112, 351, "Input",ExpressionUUID->"a9c862e1-5b66-1c43-9158-532386b340de"],
+Cell[4524, 136, 2865, 54, 880, "Output",ExpressionUUID->"c1a86fd4-fa54-f549-8067-20984f289746"]
+}, Open  ]]
+}
+]
+*)
+
